@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UTS Latihan - Web Service & Frontend | Zalwa Nadia</title>
+    <!-- Bootstrap 5.3 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary-gradient sticky-top shadow-sm">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center gap-2 fw-bold" href="#">
+                <i class="bi bi-diagram-3-fill fs-4 text-warning"></i>
+                <span>UTS Web Service</span>
+            </a>
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#beranda"><i class="bi bi-house me-1"></i> Beranda</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#profil"><i class="bi bi-person-badge me-1"></i> Profil Mahasiswa</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#tester"><i class="bi bi-cpu me-1"></i> Uji API Backend</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#endpoints"><i class="bi bi-list-check me-1"></i> Daftar Endpoint</a>
+                    </li>
+                </ul>
+                <div class="d-flex align-items-center gap-2">
+                    <span class="badge bg-light text-primary py-2 px-3 rounded-pill fw-semibold shadow-sm">
+                        <i class="bi bi-person-check-fill text-success me-1"></i> Zalwa Nadia (24010110168)
+                    </span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header id="beranda" class="hero-section py-5 text-white bg-primary-gradient">
+        <div class="container py-4">
+            <div class="row align-items-center g-4">
+                <div class="col-lg-7">
+                    <div class="d-inline-flex align-items-center gap-2 px-3 py-1 mb-3 rounded-pill bg-white bg-opacity-25 text-white small fw-semibold">
+                        <i class="bi bi-stars text-warning"></i> UTS Latihan Pemrograman Web Service
+                    </div>
+                    <h1 class="display-5 fw-extrabold mb-3">Arsitektur Terintegrasi: Backend & Frontend</h1>
+                    <p class="lead mb-4 text-white-75">
+                        Implementasi RESTful Web Service menggunakan framework <strong>Laravel 11</strong> sebagai backend data provider dan <strong>Client Web App</strong> sebagai antarmuka interaktif responsif.
+                    </p>
+                    <div class="d-flex flex-wrap gap-3">
+                        <a href="#tester" class="btn btn-warning btn-lg fw-bold shadow-sm px-4">
+                            <i class="bi bi-play-circle me-2"></i> Uji Koneksi API
+                        </a>
+                        <a href="#profil" class="btn btn-outline-light btn-lg fw-semibold px-4">
+                            <i class="bi bi-person-vcard me-2"></i> Identitas Mahasiswa
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-5">
+                    <div class="card status-overview-card border-0 shadow-lg bg-white text-dark rounded-4 p-4">
+                        <div class="d-flex align-items-center justify-content-between mb-3 border-bottom pb-3">
+                            <div class="d-flex align-items-center gap-2">
+                                <span class="pulse-indicator" id="heroPulse"></span>
+                                <h6 class="mb-0 fw-bold">Status Server Backend</h6>
+                            </div>
+                            <span class="badge bg-secondary" id="heroBadgeStatus">Standby</span>
+                        </div>
+                        <div class="small text-muted mb-2">Base URL:</div>
+                        <div class="p-2 bg-light rounded-3 font-monospace small mb-3 text-break border">
+                            http://127.0.0.1:8000
+                        </div>
+                        <div class="row text-center g-2">
+                            <div class="col-6">
+                                <div class="p-2 border rounded-3 bg-light-subtle">
+                                    <div class="text-muted small">Struktur</div>
+                                    <span class="fw-bold text-primary">Backend & Frontend</span>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="p-2 border rounded-3 bg-light-subtle">
+                                    <div class="text-muted small">Framework</div>
+                                    <span class="fw-bold text-success">Laravel 11</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container py-5">
+
+        <!-- Profil Mahasiswa -->
+        <section id="profil" class="mb-5">
+            <div class="card border-0 shadow-sm rounded-4 overflow-hidden">
+                <div class="card-header bg-white border-0 pt-4 px-4 pb-0">
+                    <div class="d-flex align-items-center gap-2 text-primary fw-bold text-uppercase small">
+                        <i class="bi bi-mortarboard-fill"></i> Data Akademik
+                    </div>
+                    <h3 class="fw-bold mt-1 mb-0">Identitas Mahasiswa</h3>
+                </div>
+                <div class="card-body p-4">
+                    <div class="row g-4 align-items-center">
+                        <div class="col-md-4 text-center">
+                            <div class="avatar-wrapper mx-auto mb-3">
+                                <div class="avatar-circle shadow">
+                                    <i class="bi bi-person-fill display-3 text-white"></i>
+                                </div>
+                            </div>
+                            <h4 class="fw-bold mb-1">Zalwa Nadia</h4>
+                            <p class="text-muted mb-2">NIM: <span class="badge bg-primary-subtle text-primary font-monospace">24010110168</span></p>
+                            <span class="badge bg-success-subtle text-success border border-success-subtle px-3 py-1 rounded-pill">
+                                Mahasiswa Aktif
+                            </span>
+                        </div>
+                        <div class="col-md-8">
+                            <div class="row g-3">
+                                <div class="col-sm-6">
+                                    <div class="p-3 border rounded-3 bg-light">
+                                        <div class="text-muted small mb-1"><i class="bi bi-book me-1 text-primary"></i> Program Studi</div>
+                                        <div class="fw-bold">Teknik Informatika / Ilmu Komputer</div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="p-3 border rounded-3 bg-light">
+                                        <div class="text-muted small mb-1"><i class="bi bi-people me-1 text-primary"></i> Kelas</div>
+                                        <div class="fw-bold">C2</div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="p-3 border rounded-3 bg-light">
+                                        <div class="text-muted small mb-1"><i class="bi bi-building me-1 text-primary"></i> Universitas</div>
+                                        <div class="fw-bold">Universitas Bumigora Mataram</div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="p-3 border rounded-3 bg-light">
+                                        <div class="text-muted small mb-1"><i class="bi bi-journal-code me-1 text-primary"></i> Mata Kuliah</div>
+                                        <div class="fw-bold">Pemrograman Web Service (UTS)</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- API Tester Section -->
+        <section id="tester" class="mb-5">
+            <div class="card border-0 shadow-sm rounded-4 overflow-hidden">
+                <div class="card-header bg-white border-0 pt-4 px-4 pb-0">
+                    <div class="d-flex align-items-center gap-2 text-primary fw-bold text-uppercase small">
+                        <i class="bi bi-terminal-fill"></i> Live API Console
+                    </div>
+                    <h3 class="fw-bold mt-1 mb-0">Uji Koneksi Backend Web Service</h3>
+                    <p class="text-muted small mb-0 mt-1">Uji komunikasi antara Frontend dan Backend secara real-time via REST API HTTP Request.</p>
+                </div>
+                <div class="card-body p-4">
+                    <div class="row g-3 align-items-center mb-3">
+                        <div class="col-md-8">
+                            <div class="input-group">
+                                <span class="input-group-text font-monospace bg-light border-end-0 text-success fw-bold">GET</span>
+                                <input type="text" class="form-control font-monospace" id="apiEndpointInput" value="http://127.0.0.1:8000/api/status" placeholder="Masukkan URL Endpoint">
+                            </div>
+                        </div>
+                        <div class="col-md-4 d-flex gap-2">
+                            <button class="btn btn-primary fw-semibold flex-fill d-flex align-items-center justify-content-center gap-2 shadow-sm" id="btnTestApi">
+                                <i class="bi bi-send-fill"></i> <span>Kirim Request</span>
+                            </button>
+                            <button class="btn btn-outline-secondary" id="btnPresetStatus" title="Endpoint Status">
+                                /status
+                            </button>
+                            <button class="btn btn-outline-secondary" id="btnPresetBagus" title="Endpoint Bagus">
+                                /bagus
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Alert message -->
+                    <div id="testAlert" class="alert alert-info d-flex align-items-center gap-2 rounded-3 py-2 px-3 d-none">
+                        <i class="bi bi-info-circle-fill fs-5" id="alertIcon"></i>
+                        <span id="alertMessage">Menghubungkan ke backend...</span>
+                    </div>
+
+                    <!-- JSON / Response Viewer -->
+                    <div class="console-box rounded-3 overflow-hidden border">
+                        <div class="console-header bg-dark text-white-50 px-3 py-2 d-flex justify-content-between align-items-center small font-monospace">
+                            <span><i class="bi bi-code-square me-2 text-warning"></i>HTTP Response Viewer</span>
+                            <div class="d-flex align-items-center gap-2">
+                                <span id="responseStatusBadge" class="badge bg-secondary font-monospace">Belum ada request</span>
+                                <button class="btn btn-sm btn-outline-light py-0 px-2 small" id="btnCopyResponse" title="Salin Response">
+                                    <i class="bi bi-clipboard"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <pre id="jsonOutput" class="console-body p-3 mb-0 font-monospace bg-dark text-light small text-break"><code>// Klik "Kirim Request" untuk menguji koneksi ke Laravel Backend API.
+// Pastikan server backend telah aktif dengan perintah:
+// cd Backend && php artisan serve
+</code></pre>
+                    </div>
+
+                    <!-- Petunjuk jika server mati -->
+                    <div class="mt-3 p-3 bg-light rounded-3 border small">
+                        <div class="fw-bold mb-1 text-dark"><i class="bi bi-lightbulb-fill text-warning me-1"></i> Cara Menjalankan Backend Laravel:</div>
+                        <div class="text-muted">
+                            Buka terminal baru di folder proyek, lalu jalankan:
+                            <code class="bg-white px-2 py-1 rounded border text-dark ms-1">cd Backend</code> kemudian
+                            <code class="bg-white px-2 py-1 rounded border text-dark ms-1">php artisan serve</code>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Daftar Endpoint & Arsitektur -->
+        <section id="endpoints" class="mb-5">
+            <div class="row g-4">
+                <div class="col-lg-7">
+                    <div class="card border-0 shadow-sm rounded-4 h-100">
+                        <div class="card-header bg-white border-0 pt-4 px-4 pb-0">
+                            <div class="d-flex align-items-center gap-2 text-primary fw-bold text-uppercase small">
+                                <i class="bi bi-signpost-split-fill"></i> Routing Table
+                            </div>
+                            <h4 class="fw-bold mt-1 mb-0">Daftar Endpoint Web Service</h4>
+                        </div>
+                        <div class="card-body p-4">
+                            <div class="table-responsive">
+                                <table class="table table-hover align-middle mb-0">
+                                    <thead class="table-light small">
+                                        <tr>
+                                            <th>Method</th>
+                                            <th>Endpoint</th>
+                                            <th>Deskripsi</th>
+                                            <th>Tipe Data</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody class="small font-monospace">
+                                        <tr>
+                                            <td><span class="badge bg-success-subtle text-success">GET</span></td>
+                                            <td class="fw-semibold">/api/status</td>
+                                            <td class="font-sans">Status API & Identitas Mahasiswa</td>
+                                            <td><span class="badge bg-info-subtle text-info">JSON</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td><span class="badge bg-success-subtle text-success">GET</span></td>
+                                            <td class="fw-semibold">/</td>
+                                            <td class="font-sans">Halaman Selamat Datang Laravel</td>
+                                            <td><span class="badge bg-secondary-subtle text-secondary">HTML/Blade</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td><span class="badge bg-success-subtle text-success">GET</span></td>
+                                            <td class="fw-semibold">/bagusimutsekali</td>
+                                            <td class="font-sans">View Master Layouts Mahasiswa</td>
+                                            <td><span class="badge bg-secondary-subtle text-secondary">HTML/Blade</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td><span class="badge bg-success-subtle text-success">GET</span></td>
+                                            <td class="fw-semibold">/up</td>
+                                            <td class="font-sans">Health Check Application State</td>
+                                            <td><span class="badge bg-light text-dark border">Plain/JSON</span></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-5">
+                    <div class="card border-0 shadow-sm rounded-4 h-100">
+                        <div class="card-header bg-white border-0 pt-4 px-4 pb-0">
+                            <div class="d-flex align-items-center gap-2 text-primary fw-bold text-uppercase small">
+                                <i class="bi bi-layers-fill"></i> Arsitektur Sistem
+                            </div>
+                            <h4 class="fw-bold mt-1 mb-0">Struktur Proyek</h4>
+                        </div>
+                        <div class="card-body p-4">
+                            <div class="d-flex flex-column gap-3">
+                                <div class="d-flex gap-3 p-3 bg-light rounded-3 border">
+                                    <i class="bi bi-hdd-network-fill fs-2 text-primary"></i>
+                                    <div>
+                                        <h6 class="fw-bold mb-1">Backend (Laravel 11)</h6>
+                                        <p class="small text-muted mb-0">Bertindak sebagai penyedia API (Web Service), logika bisnis, dan basis data.</p>
+                                    </div>
+                                </div>
+                                <div class="d-flex gap-3 p-3 bg-light rounded-3 border">
+                                    <i class="bi bi-window-fullscreen fs-2 text-success"></i>
+                                    <div>
+                                        <h6 class="fw-bold mb-1">Frontend (Client UI)</h6>
+                                        <p class="small text-muted mb-0">Antarmuka pengguna interaktif yang melakukan konsumsi data dari endpoint Backend.</p>
+                                    </div>
+                                </div>
+                                <div class="d-flex gap-3 p-3 bg-light rounded-3 border">
+                                    <i class="bi bi-git fs-2 text-danger"></i>
+                                    <div>
+                                        <h6 class="fw-bold mb-1">Git Repository</h6>
+                                        <p class="small text-muted mb-0">Pemisahan bersih dalam satu repository GitHub: <code>Backend/</code> dan <code>Frontend/</code>.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-4 mt-auto">
+        <div class="container">
+            <div class="row align-items-center gy-3">
+                <div class="col-md-6 text-center text-md-start">
+                    <h6 class="fw-bold mb-1"><i class="bi bi-code-slash text-warning me-1"></i> UTS Latihan Pemrograman Web Service</h6>
+                    <small class="text-white-50">&copy; 2026 Zalwa Nadia - NIM 24010110168 - Universitas Bumigora</small>
+                </div>
+                <div class="col-md-6 text-center text-md-end">
+                    <span class="badge bg-primary px-3 py-2 rounded-pill font-monospace small">
+                        Commit: Zalwa Nadia
+                    </span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap 5.3 JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JS -->
+    <script src="js/app.js"></script>
+</body>
+</html>

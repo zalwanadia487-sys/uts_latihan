@@ -1,2 +1,26 @@
-*
-!.gitignore
+# Dependencies
+/Backend/vendor/
+/Backend/node_modules/
+/Frontend/node_modules/
+vendor/
+node_modules/
+
+# Environment files
+/Backend/.env
+/Backend/.env.backup
+/Backend/.env.production
+.env
+
+# Storage and logs
+/Backend/storage/*.key
+/Backend/storage/logs/*.log
+/Backend/storage/framework/cache/*
+/Backend/storage/framework/sessions/*
+/Backend/storage/framework/views/*
+storage/logs/*.log
+
+# IDE & OS
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db

@@ -1,0 +1,95 @@
+/* Style Khusus Frontend UTS Web Service - Zalwa Nadia */
+
+:root {
+    --primary-blue: #1e40af;
+    --primary-gradient: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
+    --accent-color: #f59e0b;
+}
+
+body {
+    font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background-color: #f8fafc;
+    color: #1e293b;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.bg-primary-gradient {
+    background: var(--primary-gradient) !important;
+}
+
+.fw-extrabold {
+    font-weight: 800;
+}
+
+.text-white-75 {
+    color: rgba(255, 255, 255, 0.85);
+}
+
+.avatar-wrapper {
+    width: 110px;
+    height: 110px;
+}
+
+.avatar-circle {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background: var(--primary-gradient);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 4px solid #ffffff;
+}
+
+.pulse-indicator {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: #64748b;
+    display: inline-block;
+    transition: all 0.3s ease;
+}
+
+.pulse-indicator.online {
+    background-color: #10b981;
+    box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7);
+    animation: pulse 1.6s infinite;
+}
+
+.pulse-indicator.offline {
+    background-color: #ef4444;
+}
+
+@keyframes pulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7);
+    }
+    70% {
+        box-shadow: 0 0 0 10px rgba(16, 185, 129, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(16, 185, 129, 0);
+    }
+}
+
+.console-box {
+    background-color: #0f172a;
+}
+
+.console-body {
+    max-height: 280px;
+    overflow-y: auto;
+    font-family: 'SFMono-Regular', Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;
+    font-size: 0.85rem;
+    line-height: 1.5;
+}
+
+.font-sans {
+    font-family: 'Plus Jakarta Sans', sans-serif !important;
+}
+
+.status-overview-card {
+    backdrop-filter: blur(8px);
+}
